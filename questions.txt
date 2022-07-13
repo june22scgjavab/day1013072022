@@ -770,6 +770,35 @@ public static void main(String args[]) {
   }
  }
  
- --------------------------------------------------------------------------
-By default, it returns a string consisting of the name of the object's class, the '@' character, and the unsigned hexadecimal representation of the hash code of the object.
+ -----------------------------------------------------------------------------------------------------------------------------------------------
+   A ===> 65
+   B====> 66
+   C====> 67
+   D====>68
 
+   a===> 97
+   b===> 98 
+   c===> 99
+   d====>100
+
+
+   Character ch1='B';
+   Character ch2='D';
+   Character ch3='B';
+   Character ch4='b';
+
+  int compare(char ch1,Char ch2); // Return the ascii value difference between the characters
+
+   int diff=Character.compare('A','C');  -2
+       diff=Character.compare('A','a');  -32
+       diff=Character.compare('C','A');   2
+       diff=Character.compare('a','A');   32
+       diff=Character.compare('b','b');   0
+
+   int compareTo(Object obj)  
+   int diff2=ch1.compareTo(ch2);  -1
+       diff2=ch2.compareTo(ch1);   1
+       diff2=ch3.compareTo(ch1);   0
+       diff3=ch1.compareTo(ch4);   -1
+
+------------------------------------------------------------------------------------------------------------------------------------
