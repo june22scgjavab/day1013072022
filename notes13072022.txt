@@ -111,3 +111,152 @@ public class B {
 }
  
 [ The above example is of method overloading restricted to class A only as B is not inheriting A ... So display method in B is not an overloaded method]
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+A member variable can be declared as static and final both. static means a single copy of the variable and final means we cannot change the value.
+
+public class Circle {
+ 
+   private int radius;
+   public  final float pi=3.14f;
+   private float area;
+  // static means one copy and final means value cannot be change;
+
+  public Circle(int radius){
+   this.radius=radius;
+  }
+
+  public float calculateArea(){
+    area=pi*radius*radius; // float
+    return area;
+  }
+
+}
+
+
+public class Tester {
+  public static void main(String args[]) {
+   Circle circle1=new Circle(4);
+   Circle circle2=new Circle(20);
+   float area=0;
+   area=circle1.calculateArea();
+   System.out.println(area);
+   area=circle2.calculateArea();
+   System.out.println(area); 
+ }
+}  
+
+--------------------------------------------------------------------------
+In Java Object class is the super class for all the classes ( the classes which are user defined and pre defined classes like String, Scanner)
+
+   Object
+    |
+    |
+   Parent
+    |
+    |
+   Child
+
+
+  public class Parent extends Object {}
+  // We need not to write the above way to show that Object is a parent class of Parent.
+
+  public class Parent{} // Inheriting the Object class is implicit.
+
+ -------------------------------------------------------------------------------------------------------------------------------------------
+package com.infosys.objectdemo1;
+
+public class Project {
+private int projId;
+private String name;
+private String technology;
+
+
+public Project() {
+	projId=0;
+	name="No Project";
+	technology="Not Decided";
+	
+}
+public Project(int projId, String name, String technology) {
+	
+	this.projId = projId;
+	this.name = name;
+	this.technology = technology;
+}
+
+public int getProjId() {
+	return projId;
+}
+public void setProjId(int projId) {
+	this.projId = projId;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getTechnology() {
+	return technology;
+}
+public void setTechnology(String technology) {
+	this.technology = technology;
+}
+
+
+}
+
+
+package com.infosys.objectdemo1;
+
+public class ProjectMain {
+
+	public static void main(String[] args) {
+		Project project1=new Project(111,"Banking","Java");
+		Project project2=new Project(111,"Banking","Java");
+		System.out.println(project1==project2); // == it checks whether the reference variable project1 and project2 are refering to the
+		// same object or not //false
+		System.out.println(project1.equals(project2)); //false
+		// Our expectation is it should return true as the contents
+		// of both the objects are same and equals will check
+		// for the equality with the value/values.
+
+	}
+
+}
+// In the above code we are using equals method which is not present in the Project class but we are able to access it as the Project class
+// is inheriting the Object class and the Object class is having the equals method.
+// The object class equals method compares the reference as similar to == . 
+
+// According to the specification , if equals method returns true then the hashCode value should be same for both the objects.
+
+// So what we need to do?
+We need to override both hashCode() and equals method(). 
+----------------------------------------------------------------------------------------------------------------------------------
+public class Parent {}
+public class Child extends Parent {}
+
+Parent parent=new Child();
+
+OR
+
+Child child=new Child();
+Parent parent=child;
+------------------------------------------------------------------------------------------------
+
+Object object1=new Child();
+Object object2=new Parent();
+Object object3=new String("Hello");
+Object object4=new Scanner(System.in);
+
+Project project1=new Project(111,"Banking","Java);
+Project project2=new Project(111,"Banking","Java);
+
+
+
+Object obj=project2;
+
+project1.equals(project2);
+
+
