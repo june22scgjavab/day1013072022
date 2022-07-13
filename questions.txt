@@ -1,0 +1,700 @@
+package revise;
+
+public class Question1{
+   public static void main(String[] args){
+     int roll;
+	 String name;
+	 System.out.println(roll);
+	 System.out.println(name);
+	 }
+  }
+
+-------------------------------------------------------------------------------------
+package revise;
+
+public class Student{
+  private int roll;
+  private String name;
+  public void displayStudent(){
+  System.out.println(roll);
+  System.out.println(name);
+  }
+ }
+ 
+ package revise;
+ 
+ public class StudentMain{
+  public static void main(String args[]){
+   Student student=new Student();
+   student.displayStudent();
+  }
+  }
+ 
+ ---------------------------------------------------------------------------------------
+ 
+ package revise1;
+ 
+ public class Student{
+ private int roll;
+ private String name;
+ 
+ public Student(){
+ int roll=1;
+ String name="Akash";
+ }
+ 
+ public void displayStudent(){
+ System.out.println(roll);
+ System.out.println(name);
+ }
+}
+
+package revise1;
+
+public class StudentMain{
+ public static void main(String args[]) {
+    Student student=new Student();
+	student.displayStudent();
+ }
+}
+
+---------------------------------------------------------------------------------------
+
+package revise2;
+ 
+ public class Student{
+ private int roll;
+ private String name;
+ 
+ public Student(int roll, String name){
+ int roll=roll;
+ String name=name;
+ }
+ 
+ public void displayStudent(){
+ System.out.println(roll);
+ System.out.println(name);
+ }
+}
+
+package revise2;
+
+public class StudentMain{
+ public static void main(String args[]) {
+    Student student=new Student();
+	student.displayStudent();
+ }
+}
+
+---------------------------------------------------------------------------------------
+package revise3;
+
+public class Employee{
+private int empId;
+private String name;
+
+public void Employee(){
+empId=1;
+name="Jerry";
+}
+
+public void displayEmployee(){
+System.out.println(empId);
+System.out.println(name);
+}
+
+}
+
+package revise3;
+
+public class EmployeeMain{
+public static void main(String args[]){
+ Employee employee=new Employee();
+ employee.displayEmployee();
+}
+}
+-----------------------------------------------------------------------------------
+package revise4;
+
+public class Employee{
+private int empId;
+private String name;
+
+public void Employee(int empId, String name){
+this.empId=empId;
+this.name=name;
+}
+
+public void displayEmployee(){
+System.out.println(empId);
+System.out.println(name);
+}
+
+}
+
+package revise4;
+
+public class EmployeeMain{
+public static void main(String args[]){
+ Employee employee1=new Employee();
+ employee.displayEmployee();
+ Employee employee2=new Employee(1,"Suresh");
+ employee2.displayEmployee();
+}
+}
+
+--------------------------------------------------------------------------------
+package revise5;
+
+public class Employee{
+private int empId;
+private String name;
+
+public Employee(){
+empId=2;
+name="Jenny";
+}
+
+public  Employee(int empId, String name){
+this.empId=empId;
+this.name=name;
+}
+
+public void displayEmployee(){
+System.out.println(empId);
+System.out.println(name);
+}
+
+}
+
+package revise5;
+
+public class EmployeeMain{
+public static void main(String args[]){
+ Employee employee1=new Employee();
+ employee.displayEmployee();
+ Employee employee2=new Employee(1,"Suresh");
+ employee2.displayEmployee();
+}
+}
+--------------------------------------------------------------------------------
+
+package revise6;
+
+public class Parent{
+private int i;
+
+public Parent(int i){
+this.i=i;
+}
+
+public void displayParent(){
+System.out.println(this.i);
+}
+
+}
+
+
+package revise6;
+public class Child extends Parent {
+private int j;
+
+public Child(){
+j=20;
+}
+
+public void displayChild(){
+System.out.println(System.out.println(j);
+}
+}
+
+package revise6;
+
+public class Main{
+ public static void main(String args[]){
+ Child child=new Child();
+ child.displayChild();
+}
+
+}
+
+------------------------------------------------------------------------------------
+
+package revise7;
+
+public class Parent{
+private int i;
+
+public Parent(int i){
+this.i=i;
+}
+
+public void displayParent(){
+System.out.println(this.i);
+}
+
+}
+
+
+package revise7;
+public class Child extends Parent {
+private int j;
+
+public Child(){
+super(200);
+j=20;
+}
+
+public void displayChild(){
+System.out.println(System.out.println(j);
+}
+}
+
+package revise7;
+
+public class Main{
+ public static void main(String args[]){
+ Child child=new Child();
+ child.displayChild();
+}
+
+}
+
+---------------------------------------------------------------------------
+
+package revise8;
+
+public class Parent{
+private int i;
+
+public Parent(){
+this.i=30;
+}
+
+public Parent(int i){
+this.i=i;
+}
+
+public void displayParent(){
+System.out.println(this.i);
+}
+
+}
+
+
+package revise8;
+public class Child extends Parent {
+private int j;
+
+public Child(){
+j=20;
+}
+
+public void displayChild(){
+System.out.println(System.out.println(j);
+}
+}
+
+package revise8;
+
+public class Main{
+ public static void main(String args[]){
+ Child child=new Child();
+ child.displayChild();
+ child.displayParent();
+}
+
+}
+-----------------------------------------------------------------------------------------
+
+package revise9;
+
+public class Parent{
+private int i;
+
+public Parent(){
+this.i=30;
+}
+
+public Parent(int i){
+this.i=i;
+}
+
+public void displayParent(){
+System.out.println(this.i);
+}
+
+}
+
+
+package revise9;
+public class Child extends Parent {
+private int j;
+
+public Child(int j){
+super(j);
+}
+
+public void displayChild(){
+System.out.println(System.out.println(j));
+}
+}
+
+package revise9;
+
+public class Main{
+ public static void main(String args[]){
+ Child child=new Child(100);
+ child.displayChild();
+ child.displayParent();
+}
+
+}
+
+---------------------------------------------------------------------------------
+
+package revise10;
+
+public class Demo {
+private int i;
+
+private Demo(){
+i=100;
+System.out.println("I am the constructor with private access specifier"+i);
+}
+
+public static void main(String args[]){
+  Demo demo=new Demo();
+ }
+}
+-------------------------------------------------------------------------------------
+package revise11;
+
+public class Demo {
+private int i;
+
+private Demo(){
+i=100;
+System.out.println("I am the constructor with private access specifier"+i);
+}
+}
+
+package revise11;
+
+public class DemoMain{
+public static void main(String args[]){
+  Demo demo=new Demo();
+ }
+}
+--------------------------------------------------------------------------------------
+
+package revise12;
+
+public class Parent{
+ 
+ public void display(){
+ System.out.println("I am the parent display method");
+ }
+
+} 
+
+package revise12;
+
+public class Child extends Parent {
+
+private void display() {
+ System.out.println("I am the child display method");
+}
+
+}
+
+package revise12;
+
+public class Main{
+public static void main(String args[]) {
+   Child child=new Child();
+   child.display();
+  }
+ }
+ 
+ ----------------------------------------------------------------------------
+ 
+ package revise13;
+
+public class Parent{
+ 
+ public void display(){
+ System.out.println("I am the parent display method");
+ }
+
+} 
+
+package revise13;
+
+public class Child extends Parent {
+
+private void display(int i) {
+ System.out.println("I am the child display method"+i);
+}
+
+}
+
+package revise13;
+
+public class Main{
+public static void main(String args[]) {
+   Child child=new Child();
+   child.display();
+   child.display(1);
+  }
+ }
+ 
+ --------------------------------------------------------------------------------------
+ 
+ package revise14;
+
+public class Parent{
+ 
+ public int display(){
+ System.out.println("I am the parent display method");
+ }
+
+} 
+
+package revise14;
+
+public class Child extends Parent {
+
+public void display() {
+ System.out.println("I am the child display method"+i);
+}
+
+}
+
+package revise14;
+
+public class Main{
+public static void main(String args[]) {
+   Child child=new Child();
+   child.display();
+  
+  }
+ }
+ 
+ ----------------------------------------------------------------------------------------
+ 
+ 
+ package revise15;
+
+public class Parent{
+ 
+ public int display(){
+ System.out.println("I am the parent display method1");
+ }
+ 
+ public void display(){
+ System.out.println("I am the parent display method2");
+ }
+
+} 
+
+package revise15;
+
+public class Child extends Parent {
+
+
+
+}
+
+package revise15;
+
+public class Main{
+public static void main(String args[]) {
+   Child child=new Child();
+   child.display();
+  
+  }
+ }
+ ----------------------------------------------------------------------------------------
+ 
+ package revise16;
+
+public class Parent{
+ 
+ 
+ 
+ public void display(){
+ System.out.println("I am the parent display method2");
+ }
+
+} 
+
+package revise16;
+
+public class Child extends Parent {
+
+public int displayChild(){
+ System.out.println("I am the parent display method1");
+ }
+
+}
+
+package revise16;
+
+public class Main{
+public static void main(String args[]) {
+  Parent parent=new Child();
+   parent.displayChild();
+  
+  }
+ }
+ --------------------------------------------------------------------------------
+ 
+ package revise17;
+
+public class Parent{
+ 
+ 
+ 
+ public void display(){
+ System.out.println("I am the parent display method2");
+ }
+
+} 
+
+package revise17;
+
+public class Child extends Parent {
+
+public int displayChild(){
+ System.out.println("I am the parent display method1");
+ }
+ 
+ 
+
+}
+
+package revise17;
+
+public class Main{
+public static void main(String args[]) {
+  Parent parent=new Child();
+   parent.display();
+  
+  }
+ }
+ 
+ --------------------------------------------------------------------------------
+ 
+ 
+ package revise18;
+
+public class Parent{
+ 
+ 
+ 
+ public void display(){
+ System.out.println("I am the parent display method");
+ }
+
+} 
+
+package revise18;
+
+public class Child extends Parent {
+
+public void display(){
+ System.out.println("I am the child display method");
+ }
+ 
+ 
+
+}
+
+package revise18;
+
+public class Main{
+public static void main(String args[]) {
+  Parent parent=new Child();
+   parent.display();
+  
+  }
+ }
+ -------------------------------------------------------------------------------------
+ 
+ package revise19;
+
+public class Parent{
+ 
+ 
+ 
+ public void display(){
+ System.out.println("I am the parent display method");
+ }
+
+} 
+
+package revise19;
+
+public class Child extends Parent {
+
+public void display(){
+super.display();
+ System.out.println("I am the child display method");
+ }
+ 
+ 
+
+}
+
+package revise19;
+
+public class Main{
+public static void main(String args[]) {
+  Parent parent=new Child();
+   parent.display();
+  
+  }
+ }
+ ----------------------------------------------------------------
+ 
+ --------------------------------------------------------------------------------------
+ 
+ package revise20;
+
+public class Parent{
+ 
+ protected int i=10;
+ 
+ public void display(){
+ System.out.println("I am the parent display method");
+ }
+
+} 
+
+package revise20;
+
+public class Child extends Parent {
+
+private int i=20;
+ public void display(){
+ System.out.println(super.i);
+ System.out.prinltn(i);
+ System.out.println("I am the child display method");
+ }
+ 
+ 
+
+}
+
+package revise19;
+
+public class Main{
+public static void main(String args[]) {
+  Parent parent=new Child();
+   parent.display();
+  
+  }
+ }
+ 
+ --------------------------------------------------------------------------
