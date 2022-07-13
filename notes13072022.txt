@@ -233,6 +233,9 @@ public class ProjectMain {
 
 // So what we need to do?
 We need to override both hashCode() and equals method(). 
+
+toString()
+By default, it returns a string consisting of the name of the object's class, the '@' character, and the unsigned hexadecimal representation of the hash code of the object.
 ----------------------------------------------------------------------------------------------------------------------------------
 public class Parent {}
 public class Child extends Parent {}
@@ -258,5 +261,44 @@ Project project2=new Project(111,"Banking","Java);
 Object obj=project2;
 
 project1.equals(project2);
+--------------------------------------------------------------------------------------
+//import java.lang.String;
+import java.util.Scanner;
+
+ public class Demo {
+   public static void main(String args[]) {
+
+
+   }
+}
+
+// java.lang is a package which is by default imported. The String class, Wrapper classes, Object class, Most of
+the Exception classes, System class is within java.lang package.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+This mechanism is called autoboxing which means automatic conversion of primitive types to the object of their corresponding wrapper classes is known as autoboxing. For example – conversion of char to Character as shown above.
+
+char value = 'a';
+Character wrappedChar = value;
+
+Similarly, there is a process of unboxing which is opposite of autoboxing. In this process automatically conversion of a wrapper class object to its corresponding primitive type is performed. For example refer the code given below.
+
+char newVal = wrappedChar;
+
+----------------------------------------------------------------------------------------------------------------------------
+
+     Object
+      |
+      |
+    Number
+      |
+      |--------Integer
+      |--------Long
+      |--------Byte
+      |--------Short
+
+
+[ Integer,Long,Byte, Short they are siblings ]
+[ For typecasting and typeconversion the classes should have Parent and Child relationship ]
 
 

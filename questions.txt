@@ -771,3 +771,5 @@ public static void main(String args[]) {
  }
  
  --------------------------------------------------------------------------
+By default, it returns a string consisting of the name of the object's class, the '@' character, and the unsigned hexadecimal representation of the hash code of the object.
+
