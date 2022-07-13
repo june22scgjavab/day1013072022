@@ -1,0 +1,113 @@
+
+
+   int i=10;
+   System.out.println(10); 
+
+  code snippet. A part of a code. 
+-------------------------------------------------------------------------------------------------------------
+
+We dont want the value within a variable should change. 
+
+ int num=10;
+ System.out.println(num); // 10
+ num=20;
+ System.out.println(num); // 20
+
+
+ final int num=10;
+ System.out.println(num); //10
+ num=20; // Compilation error because we cannot reassign a value in the variable which is declared as final.
+
+-------------------------------------------------------------------------------------------------------
+
+package com.infosys.finaldemos;
+
+public class FinalDemo1 {
+
+	public static void main(String[] args) {
+		final int NUM=10;  // The convention followed is final variable are written in uppercase
+		//num=20;  //The final local variable num cannot be assigned. It must be blank and not using a compound assignment
+		
+	}
+
+}
+
+// a local variable cannot be static but a local variable can be final. 
+---------------------------------------------------------------------------------------------------------------------------------------
+
+package com.infosys.finaldemos;
+
+public class FinalDemo2 {
+
+	public static void main(String[] args) {
+		final int NUM; //So declared 
+		NUM=10;  // initialised
+		//NUM=20;  // reinitialise
+		System.out.println(NUM);
+		
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------------------------
+What about the instance variable as final.
+instance variable if it is final , it needs to initialised at the place of declaration or within the constructor.
+----------------------------------------------------------------------------------------------------------------------------------------------
+If a class is final, we cannot inherit from that final class. example of final classes like String, Wrapper classes. 
+
+public class String {}
+
+public class MyString extends String {} // compilation error because String class is one of the final class
+-------------------------------------------------------------------------------------------------------------------------------------------------
+If a method is final we cannot override the final method.
+
+Method overriding is possible only when the classes are having parent child relationship and the method name , return type, number of parameters,
+data type of parameters , sequence of parameters are same. 
+
+public class Base {
+
+public void disp(){} // overridden
+
+}
+
+public class Derived Base {
+public void disp() {} // overriding
+
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class A {
+
+public void disp() {}
+}
+
+public class B {
+public void disp() {}
+}
+
+The above example is not of method overriding because class A and B are not related with Parent Child relationship.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+public class A  {
+ public void display(int a,int b){}
+ public void display(int a,int b,int c){}
+}
+
+public class B extends A {
+ public void display(){}
+}
+ 
+
+[ In method overloading the methods can be scattered between Parent and Sub-class ]  
+--------------------------------------------------------------------------------------------------------------------------------------
+
+public class A  {
+ public void display(int a,int b){}
+ public void display(int a,int b,int c){}
+}
+
+public class B {
+ public void display(){}
+}
+ 
+[ The above example is of method overloading restricted to class A only as B is not inheriting A ... So display method in B is not an overloaded method]
