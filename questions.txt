@@ -381,7 +381,7 @@ public class Main{
 
 }
 
-The code will compile will shoe the output as 20 and 30
+The code will compile will show the output as 20 and 30
 -----------------------------------------------------------------------------------------
 
 package revise9;
@@ -731,6 +731,8 @@ public class Child extends Parent {
 public void display(){
 super.display();
  System.out.println("I am the child display method");
+
+
  }
  
  
@@ -780,7 +782,7 @@ private int i=20;
 
 }
 
-package revise19;
+package revise20;
 
 public class Main{
 public static void main(String args[]) {
