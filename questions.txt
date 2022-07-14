@@ -277,7 +277,7 @@ j=20;
 }
 
 public void displayChild(){
-System.out.println(System.out.println(j);
+System.out.println(j);
 }
 }
 
@@ -290,6 +290,8 @@ public class Main{
 }
 
 }
+[ Compilation error. The default constructor of Child class will call the default constructor of Parent class but in Parent class we have the
+parameterized constructor defined ]
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -319,7 +321,7 @@ j=20;
 }
 
 public void displayChild(){
-System.out.println(System.out.println(j);
+System.out.println(j);
 }
 }
 
@@ -332,7 +334,7 @@ public class Main{
 }
 
 }
-
+[ The code will compile and will show the output as 20 ]
 -------------------------------------------------------------------------------------------------------------------------------
 
 package revise8;
@@ -364,7 +366,7 @@ j=20;
 }
 
 public void displayChild(){
-System.out.println(System.out.println(j);
+System.out.println(j);
 }
 }
 
@@ -378,6 +380,8 @@ public class Main{
 }
 
 }
+
+The code will compile will shoe the output as 20 and 30
 -----------------------------------------------------------------------------------------
 
 package revise9;
@@ -409,7 +413,7 @@ super(j);
 }
 
 public void displayChild(){
-System.out.println(System.out.println(j));
+System.out.println(j);
 }
 }
 
@@ -423,7 +427,7 @@ public class Main{
 }
 
 }
-
+[ The code will compile and output will be as 0 and 100.]
 ---------------------------------------------------------------------------------
 
 package revise10;
@@ -440,6 +444,7 @@ public static void main(String args[]){
   Demo demo=new Demo();
  }
 }
+[ The code will compile. We can have a constructor as private . The output of I am the constructor with private access specifier100 will be shown.
 -------------------------------------------------------------------------------------
 package revise11;
 
@@ -459,6 +464,8 @@ public static void main(String args[]){
   Demo demo=new Demo();
  }
 }
+
+[ Compilation error as Demo class and DemoMain are two separate classes. So from DemoMain we cannot access the private constructor of Demo class. ]
 --------------------------------------------------------------------------------------
 
 package revise12;
@@ -489,7 +496,10 @@ public static void main(String args[]) {
    child.display();
   }
  }
- 
+[ Compilation error. The display method in the child class cannot have access modifier which is more restrictive in comparison to the method in the
+parent class]
+
+private=====>default/package specfic==========>protected==========>public 
  ----------------------------------------------------------------------------
  
  package revise13;
@@ -506,7 +516,7 @@ package revise13;
 
 public class Child extends Parent {
 
-private void display(int i) {
+protected void display(int i) {
  System.out.println("I am the child display method"+i);
 }
 
@@ -521,8 +531,8 @@ public static void main(String args[]) {
    child.display(1);
   }
  }
- 
- --------------------------------------------------------------------------------------
+ [ Code will compile. It will display I am the parent display method and I am the child display method1
+----------------------------------------------------------------------------------
  
  package revise14;
 
@@ -554,6 +564,7 @@ public static void main(String args[]) {
   }
  }
  
+[ Compilation error as in the code it is not method overriding as the return types are different and also not method overloading as only return type is different ]
  ----------------------------------------------------------------------------------------
  
  
@@ -588,6 +599,9 @@ public static void main(String args[]) {
   
   }
  }
+
+[ Compilation error as we have two display method which are differing in return type only so it cannot method overloading and it is also
+not method overriding as for method overriding we need to have two have minimum two classes which are having parent child relationship. ]
  ----------------------------------------------------------------------------------------
  
  package revise16;
@@ -621,6 +635,7 @@ public static void main(String args[]) {
   
   }
  }
+[ The code will show compilation error as we dont have displayChild in the Parent class and the reference variable is of Parent type. ]
  --------------------------------------------------------------------------------
  
  package revise17;
@@ -630,7 +645,7 @@ public class Parent{
  
  
  public void display(){
- System.out.println("I am the parent display method2");
+ System.out.println("I am the parent display method");
  }
 
 } 
@@ -640,7 +655,7 @@ package revise17;
 public class Child extends Parent {
 
 public int displayChild(){
- System.out.println("I am the parent display method1");
+ System.out.println("I am the child display method");
  }
  
  
@@ -656,7 +671,7 @@ public static void main(String args[]) {
   
   }
  }
- 
+ [ The code will compile and show the the output as I am the parent display method.
  --------------------------------------------------------------------------------
  
  
@@ -693,6 +708,8 @@ public static void main(String args[]) {
   
   }
  }
+
+The code will compile and show the output as I am the child display method.
  -------------------------------------------------------------------------------------
  
  package revise19;
@@ -729,6 +746,9 @@ public static void main(String args[]) {
   
   }
  }
+
+[ The code will compile. super keyword is used to represent the immediate parent class. So here super.display() will invoke the display method of
+the parent class. So the output will be I am the parent display method I am the child display method
  ----------------------------------------------------------------
  
  --------------------------------------------------------------------------------------
@@ -769,36 +789,9 @@ public static void main(String args[]) {
   
   }
  }
+
+[ super can be used to access the instance variable of the parent when we have a variable with the same name in the child class. 
+So the output is 10 20 I am the child display method. ]
  
  -----------------------------------------------------------------------------------------------------------------------------------------------
-   A ===> 65
-   B====> 66
-   C====> 67
-   D====>68
-
-   a===> 97
-   b===> 98 
-   c===> 99
-   d====>100
-
-
-   Character ch1='B';
-   Character ch2='D';
-   Character ch3='B';
-   Character ch4='b';
-
-  int compare(char ch1,Char ch2); // Return the ascii value difference between the characters
-
-   int diff=Character.compare('A','C');  -2
-       diff=Character.compare('A','a');  -32
-       diff=Character.compare('C','A');   2
-       diff=Character.compare('a','A');   32
-       diff=Character.compare('b','b');   0
-
-   int compareTo(Object obj)  
-   int diff2=ch1.compareTo(ch2);  -1
-       diff2=ch2.compareTo(ch1);   1
-       diff2=ch3.compareTo(ch1);   0
-       diff3=ch1.compareTo(ch4);   -1
-
-------------------------------------------------------------------------------------------------------------------------------------
+  
